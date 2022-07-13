@@ -1,4 +1,4 @@
-import { Scene, ActionManager, ExecuteCodeAction, Observer, Scalar } from 'babylonjs';
+import { ActionManager, ExecuteCodeAction, Scene, Vector3 } from 'babylonjs';
 import { Avatar } from './avatar';
 
 export class Controller {
@@ -35,8 +35,12 @@ export class Controller {
     // Keyboard controls & Mobile controls
     //handles what is done when keys are pressed or if on mobile, when buttons are pressed
     private _updateFromKeyboard(): void {
-        if(this.inputMap["a"] || this.inputMap["ArrowLeft"]){ this.avatar.shape.position.x -= 0.3; }
-		if(this.inputMap["d"] || this.inputMap["ArrowRight"]){ this.avatar.shape.position.x += 0.3; }
-		if(this.inputMap[" "] || this.inputMap["Space"]){ this.avatar.shape.position.y += 0.3; }
+        if (this.inputMap["a"] || this.inputMap["ArrowLeft"]) {
+            this.avatar.shape.moveWithCollisions(new Vector3(-0.3, 0, 0))
+        }
+		else if(this.inputMap["d"] || this.inputMap["ArrowRight"]){ 
+            this.avatar.shape.moveWithCollisions(new Vector3(0.3, 0, 0))
+        }
+		else if(this.inputMap[" "] || this.inputMap["Space"]){ this.avatar.shape.position.y += 0.3; }
     }
 }

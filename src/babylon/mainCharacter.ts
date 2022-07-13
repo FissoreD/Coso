@@ -1,6 +1,5 @@
-import { Scene, Vector3, Ray, TransformNode, Mesh, Color3, Color4, UniversalCamera, Quaternion, AnimationGroup, ExecuteCodeAction, ActionManager, ParticleSystem, Texture, SphereParticleEmitter, Sound, Observable, ShadowGenerator, MeshBuilder, PhysicsImpostor } from "babylonjs";
-import { Avatar, ParametersAvatar } from "./avatar";
-import { Controller } from "./controller";
+import { Scene, Vector3 } from "babylonjs";
+import { Avatar } from "./avatar";
 
 export class MainCharacter extends Avatar {
   //const values
